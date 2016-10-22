@@ -15,6 +15,9 @@ function find(path, name) {
 }
 
 module.exports = (base) => {
+  if(!base) {
+    base = '.';
+  }
   return {
     plugin: (name, config) => {
       return find(base + '/plugins', name)(config);

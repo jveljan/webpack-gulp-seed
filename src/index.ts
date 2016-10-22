@@ -1,3 +1,9 @@
-import './index.less'
+import "./index.less";
 
-//console.log('Application Running');
+class Main {
+  constructor() {
+    console.log("Application Running");
+  }
+}
+
+new Main();

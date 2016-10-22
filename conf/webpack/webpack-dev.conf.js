@@ -1,20 +1,18 @@
-const conf = require('../conf');
+const paths = require('../paths.conf');
 const path = require('path');
-
-const wpf = require('./wpf-loader')('./webpack-factory');
+const ct = require('./auto/load')();
 
 module.exports = require('./webpack-config-extend')({
   name: 'dev-config',
   debug: true,
   devtool: 'source-map',
-  'display-error-details': true, 
   output: {
-    path: path.join(process.cwd(), conf.paths.tmp),
+    path: path.join(process.cwd(), paths.tmp),
     filename: 'index.js'
   },
   module: {
     loaders: [
-      wpf.loader('styles-dev')
+      ct.loader('styles-dev')
     ]
   }
 });

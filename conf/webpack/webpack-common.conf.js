@@ -1,34 +1,34 @@
 
 const autoprefixer = require('autoprefixer');
 
-const conf = require('../conf');
-const wpf = require('./wpf-loader')('./webpack-factory');
+const paths = require('../paths.conf');
+const ct = require('./auto/load')();
 
 module.exports = () => {
   return {
     name: 'common-config',
     module: {
       preLoaders: [
-        wpf.loader('tslint')
+        ct.loader('tslint')
       ],
       loaders: [
-        wpf.loader('json'),
-        wpf.loader('ts'),
-        wpf.loader('html')
+        ct.loader('json'),
+        ct.loader('ts'),
+        ct.loader('html')
       ]
     },
     plugins: [
-      wpf.plugin('occurrence-order'),
-      wpf.plugin('no-errors'),
-      wpf.plugin('html', conf.paths.src + '/index.html'),
-      wpf.plugin('angular-context-replacement', conf.paths.src)
+      ct.plugin('occurrence-order'),
+      ct.plugin('no-errors'),
+      ct.plugin('html', paths.src + '/index.html'),
+      ct.plugin('angular-context-replacement', paths.src)
     ],
     debug: false,
     postcss: () => [autoprefixer],
     resolve: {
       extensions: ['', '.js', '.ts']
     },
-    entry: `./${conf.paths.src}/index`,
+    entry: `./${paths.src}/index`,
     ts: {
       configFileName: 'tsconfig.json'
     },
@@ -37,3 +37,4 @@ module.exports = () => {
     }
   };
 }
+
