@@ -1,0 +1,10 @@
+{
+  "name": "webpack-gulp-seed",
+  "version": "1.0.0",
+  "description": "Seed for web project with webpack and gulp",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "Jovica Veljanovski",
+  "license": "MIT"
+}
