@@ -8,6 +8,16 @@ gulp.task('test', (done) => {
   done();
 });
 
+gulp.task('debug', (done) => {
+  // const c1 = require('../webpack/webpack-dev.conf');
+  // const c2 = require('../webpack/webpack-dist.conf');
+  // const c0 = require('../webpack/webpack-common.conf');
+  // console.log(c0);
+  // console.log(c1);
+  // console.log(c2);
+  done();
+});
+
 gulp.task('serve', (done) => {
   // Start a webpack-dev-server
   const port = 4044;

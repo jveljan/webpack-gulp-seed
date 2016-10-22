@@ -1,11 +1,8 @@
 /**
- * Factory for webpack plugins and loaders
- * 
- * Nothing special, just a named preconfigurations for all possible loaders and plugins that will be used by this application 
+ * webpack plugins and loaders in separate files
+ * *named preconfigurations that can be referenced by filename in config 
  */
 const webpack = require('webpack');
-
-
 function find(path, name) {
   const fn = require(path + '/' + name)
   if(typeof fn !== 'function') {

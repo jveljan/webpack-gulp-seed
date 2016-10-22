@@ -1,8 +1,9 @@
 const paths = require('../paths.conf');
 const path = require('path');
-const ct = require('./auto/load')();
-
-module.exports = require('./webpack-config-extend')({
+const merge = require('webpack-merge');
+const base = require('./webpack-common.conf');
+const ct = require('./map')();
+module.exports = merge(base, {
   name: 'dist-config',
   output: {
     path: path.join(process.cwd(), paths.dist),

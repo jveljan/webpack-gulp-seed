@@ -1,8 +1,9 @@
 const paths = require('../paths.conf');
 const path = require('path');
-const ct = require('./auto/load')();
-
-module.exports = require('./webpack-config-extend')({
+const ct = require('./map')();
+const merge = require('webpack-merge');
+const base = require('./webpack-common.conf');
+module.exports = merge(base, {
   name: 'dev-config',
   debug: true,
   devtool: 'source-map',

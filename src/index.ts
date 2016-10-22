@@ -2,7 +2,7 @@ import "./index.less";
 
 class Main {
   constructor() {
-    console.log("Application Running");
+    console.log("App Ready!");
   }
 }
 
