@@ -2,25 +2,25 @@
 const autoprefixer = require('autoprefixer');
 
 const paths = require('../paths.conf');
-const ct = require('./map')();
+const lot = require('./lot')();
 
 module.exports = {
   name: 'common-config',
   module: {
     preLoaders: [
-      ct.loader('tslint')
+      lot.loader('tslint')
     ],
     loaders: [
-      ct.loader('json'),
-      ct.loader('ts'),
-      ct.loader('html')
+      lot.loader('json'),
+      lot.loader('ts'),
+      lot.loader('html')
     ]
   },
   plugins: [
-    ct.plugin('occurrence-order'),
-    ct.plugin('no-errors'),
-    ct.plugin('html', paths.src + '/index.html'),
-    ct.plugin('angular-context-replacement', paths.src)
+    lot.plugin('occurrence-order'),
+    lot.plugin('no-errors'),
+    lot.plugin('html', paths.src + '/index.html'),
+    lot.plugin('angular-context-replacement', paths.src)
   ],
   debug: false,
   postcss: () => [autoprefixer],

@@ -2,7 +2,7 @@ const paths = require('../paths.conf');
 const path = require('path');
 const merge = require('webpack-merge');
 const base = require('./webpack-common.conf');
-const ct = require('./map')();
+const lot = require('./lot')();
 module.exports = merge(base, {
   name: 'dist-config',
   output: {
@@ -11,13 +11,13 @@ module.exports = merge(base, {
   },
   module: {
     loaders: [
-      ct.loader('styles-prod')
+      lot.loader('styles-prod')
     ]
   },
   plugins: [
-    ct.plugin('define-prod-env'),
-    ct.plugin('uglify-js'),
-    ct.plugin('content-hash-css'),
-    ct.plugin('vendor-js')
+    lot.plugin('define-prod-env'),
+    lot.plugin('uglify-js'),
+    lot.plugin('content-hash-css'),
+    lot.plugin('vendor-js')
   ]
 });

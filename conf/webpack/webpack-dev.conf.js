@@ -1,6 +1,6 @@
 const paths = require('../paths.conf');
 const path = require('path');
-const ct = require('./map')();
+const lot = require('./lot')();
 const merge = require('webpack-merge');
 const base = require('./webpack-common.conf');
 module.exports = merge(base, {
@@ -13,7 +13,7 @@ module.exports = merge(base, {
   },
   module: {
     loaders: [
-      ct.loader('styles-dev')
+      lot.loader('styles-dev')
     ]
   }
 });
