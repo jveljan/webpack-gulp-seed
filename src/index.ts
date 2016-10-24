@@ -1,4 +1,5 @@
 import "./index.less";
+import "./app";
 
 class Main {
   constructor() {

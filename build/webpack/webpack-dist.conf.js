@@ -7,7 +7,7 @@ module.exports = merge(base, {
   name: 'dist-config',
   output: {
     path: path.join(process.cwd(), paths.dist),
-    filename: '[name]-[hash].js'
+    filename: '[name]-[hash:7].js'
   },
   module: {
     loaders: [

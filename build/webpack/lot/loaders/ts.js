@@ -1,9 +1,7 @@
 module.exports = () => {
   return {
-    test: /\.ts$/,
-    exclude: /node_modules/,
-    loaders: [
-      'ts'
-    ]
+    test: /\.tsx?$/,
+    loader: 'ts-loader',
+    exclude: /node_modules/
   };
 }

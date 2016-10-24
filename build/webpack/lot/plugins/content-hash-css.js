@@ -1,4 +1,4 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = () => {
-  return new ExtractTextPlugin('index-[contenthash].css');
+  return new ExtractTextPlugin('[name]-[contenthash:7].css');
 }

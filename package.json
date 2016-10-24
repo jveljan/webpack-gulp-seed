@@ -26,6 +26,7 @@
     "eslint-loader": "^1.3.0",
     "eslint-plugin-babel": "^3.1.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.3",
+    "file-loader": "^0.9.0",
     "gulp": "gulpjs/gulp#4ed9a4a3275559c73a396eff7e1fde3824951ebb",
     "gulp-filter": "^4.0.0",
     "gulp-hub": "frankwallis/gulp-hub#d461b9c700df9010d0a8694e4af1fb96d9f38bf4",
@@ -51,8 +52,9 @@
     "tslint-loader": "^2.1.0",
     "typescript": "^2.0.2",
     "typings": "^1.0.4",
+    "url-loader": "^0.5.7",
     "webpack": "2.1.0-beta.20",
-    "webpack-dev-server": "^1.16.2",
+    "webpack-dev-server": "v2.1.0-beta.9",
     "webpack-merge": "^0.15.0"
   }
 }

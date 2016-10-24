@@ -9,7 +9,7 @@ module.exports = merge(base, {
   devtool: 'source-map',
   output: {
     path: path.join(process.cwd(), paths.tmp),
-    filename: 'index.js'
+    filename: '[name]-[hash:7].js'
   },
   module: {
     loaders: [
