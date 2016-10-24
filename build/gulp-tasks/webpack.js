@@ -38,7 +38,15 @@ gulp.task('serve', (done) => {
 gulp.task('compile', (done) => {
   const cfg = require('../webpack/webpack-dist.conf');
   var compiler = webpack(cfg);
-  compiler.run(done);
+  compiler.run(function(err, stats) {
+        if (err) { throw new gutil.PluginError('webpack:build', err); }
+        gutil.log('[webpack:build]', stats.toString({
+            chunks: true,
+            colors: true
+        }));
+        done();
+  });
+
 });
 
 gulp.task('build', gulp.series('clean', 'copy-files', 'compile'));
