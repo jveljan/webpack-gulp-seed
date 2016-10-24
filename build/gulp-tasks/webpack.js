@@ -19,6 +19,10 @@ gulp.task('debug', (done) => {
 });
 
 gulp.task('serve', (done) => {
+  require('./serve/server');
+  done();
+});
+gulp.task('serve1', (done) => {
   // Start a webpack-dev-server
   const port = 4044;
   const cfg = require('../webpack/webpack-dev.conf');
