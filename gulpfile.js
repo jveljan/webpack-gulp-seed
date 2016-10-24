@@ -1,1 +1,1 @@
-require('./conf/gulp-tasks');
+require('./build/gulp-tasks');
