@@ -1,28 +1,26 @@
 
 const autoprefixer = require('autoprefixer');
-
 const paths = require('../paths.conf');
-const lot = require('./lot')();
+const compose = require('./compose')();
 
 module.exports = {
-  name: 'common-config',
   module: {
     preLoaders: [
-      lot.loader('eslint'),
-      lot.loader('tslint')
+      compose.loader('eslint'),
+      compose.loader('tslint')
     ],
     loaders: [
-      lot.loader('json'),
-      lot.loader('ts'),
-      lot.loader('html'),
-      lot.loader('fonts', 'assets/fonts'),
-      lot.loader('images', 'assets/images')
+      compose.loader('json'),
+      compose.loader('ts'),
+      compose.loader('html'),
+      compose.loader('fonts', 'assets/fonts'),
+      compose.loader('images', 'assets/images')
     ]
   },
   plugins: [
-    lot.plugin('occurrence-order'),
-    lot.plugin('no-errors'),
-    lot.plugin('html', paths.src + '/index.html')
+    compose.plugin('occurrence-order'),
+    compose.plugin('no-errors'),
+    compose.plugin('html', paths.src + '/index.html')
   ],
   debug: false,
   postcss: () => [autoprefixer],

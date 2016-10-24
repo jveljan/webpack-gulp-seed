@@ -1,10 +1,9 @@
 const paths = require('../paths.conf');
 const path = require('path');
-const lot = require('./lot')();
+const compose = require('./compose')();
 const merge = require('webpack-merge');
 const base = require('./webpack-common.conf');
 module.exports = merge(base, {
-  name: 'dev-config',
   debug: true,
   devtool: 'source-map',
   output: {
@@ -13,7 +12,7 @@ module.exports = merge(base, {
   },
   module: {
     loaders: [
-      lot.loader('styles-dev')
+      compose.loader('styles-dev')
     ]
   }
 });
