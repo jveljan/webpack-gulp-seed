@@ -5,13 +5,10 @@ const compose = require('./compose')();
 
 module.exports = {
   module: {
-    preLoaders: [
-      compose.loader('eslint'),
-      compose.loader('tslint')
-    ],
     loaders: [
       compose.loader('json'),
-      compose.loader('ts'),
+      compose.loader('es2015'), // *.js -> eslint + babel
+      compose.loader('ts'),     // *.ts -> tslint + typescript
       compose.loader('html'),
       compose.loader('fonts', 'assets/fonts'),
       compose.loader('images', 'assets/images')
@@ -19,7 +16,7 @@ module.exports = {
   },
   plugins: [
     compose.plugin('occurrence-order'),
-    compose.plugin('no-errors'),
+    //compose.plugin('no-errors'),
     compose.plugin('html', paths.src + '/index.html')
   ],
   debug: false,

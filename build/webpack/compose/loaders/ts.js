@@ -1,7 +1,8 @@
 module.exports = () => {
   return {
     test: /\.tsx?$/,
-    loader: 'ts-loader',
+    loaders: ['ts-loader', 'tslint'],
+    include: /src/,
     exclude: /node_modules/
   };
 }

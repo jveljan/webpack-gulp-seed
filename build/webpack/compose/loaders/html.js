@@ -1,6 +1,6 @@
 module.exports = () => {
   return {
     test: /.html$/,
-    loaders: ['html']
+    loader: 'html'
   };
 }

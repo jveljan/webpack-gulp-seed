@@ -1,3 +1,10 @@
+/* globals: document */
+export class MyApp {
+  constructor() {
+
+  }
+}
+
 function el(id) {
   return document.getElementById(id);
 }
